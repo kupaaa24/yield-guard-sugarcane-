@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("{{ url_for('static', filename='sugarcane_bg.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .dashboard-container {
+            background: rgba(0, 0, 0, 0.6);
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .predict-btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .predict-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .logout-link {
+            display: block;
+            margin-top: 1.5rem;
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard-container">
+    <h1>Welcome, {{ username }}!</h1>
+    <p>Welcome to <strong>Sugarcane Fertility Prediction</strong></p>
+    <button class="predict-btn" onclick="location.href='/ml'">Predict</button>
+    <a class="logout-link" href="{{ url_for('logout') }}">Logout</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #88c057, #dfe6e9); /* Changed from blue tones to greenish-earthy */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+form p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.flashes {
+    margin-top: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-align: center;
+}
+
+.flashes .success { background: #2ecc71; }
+.flashes .danger { background: #e74c3c; }
+.flashes .info { background: #3498db; }

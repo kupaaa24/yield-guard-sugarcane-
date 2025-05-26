@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sugarcane Fertility Predictor</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">🎉 Sugarcane Predictor</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#form">Predict</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>🎊 Sugarcane Fertility Prediction 🎊</h1>
+        <form id="form" method="POST" action="/predict">
+            <label for="N">Nitrogen (N) [0–200 mg/kg]</label>
+            <input type="number" name="N" id="N" min="0" max="200" step="any" required>
+
+            <label for="P">Phosphorus (P) [0–100 mg/kg]</label>
+            <input type="number" name="P" id="P" min="0" max="100" step="any" required>
+
+            <label for="K">Potassium (K) [0–400 mg/kg]</label>
+            <input type="number" name="K" id="K" min="0" max="400" step="any" required>
+
+            <label for="EC">Electrical Conductivity (EC) [dS/m]</label>
+            <input type="number" name="EC" id="EC" min="0" step="any" required>
+
+            <label for="pH">pH Value [0–10]</label>
+            <input type="number" name="pH" id="pH" min="0" max="10" step="any" required>
+
+            <label for="temperature">Temperature [0–50 °C]</label>
+            <input type="number" name="temperature" id="temperature" min="0" max="50" step="any" required>
+
+            <label for="humidity">Humidity [0–100 %]</label>
+            <input type="number" name="humidity" id="humidity" min="0" max="100" step="any" required>
+
+            <button type="submit">🚀 Predict Now!</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">
+            🎉 <strong>{{ prediction_text }}</strong> 🎉
+        </div>
+        {% endif %}
+
+        {% if recommendation_text %}
+        <div class="recommendation" id="recommendations">
+            <h2>🧪 Soil Fertility Recommendation</h2>
+            {{ recommendation_text|safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
